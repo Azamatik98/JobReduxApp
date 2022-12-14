@@ -4,8 +4,7 @@ import { Badge } from "UI/Badge";
 import { Card } from "UI/Card";
 import { Stack } from "UI/Stack";
 
-import { selectFilters } from "store/filters/filter-selector";
-import { removeFilter, clearFilter } from "store/filters/filter-actions";
+import { removeFilter, clearFilter, selectFilters } from "./filter-slice";
 
 const FilterPanel = () => {
   const dispatch = useDispatch();
@@ -30,7 +29,7 @@ const FilterPanel = () => {
           ))}
         </Stack>
 
-        <button onClick={() => dispatch(clearFilter)} className="link">
+        <button onClick={() => dispatch(clearFilter())} className="link">
           Clear
         </button>
       </div>
